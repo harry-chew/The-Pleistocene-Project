@@ -11,12 +11,12 @@ namespace TPP.Scripts.UI
 
         void Start()
         {
-            CoreEvents.SelectInteractable += OnSelectInteractableEvent;
+            CoreEvents.SelectInteractableEvent += OnSelectInteractableEvent;
         }
 
         private void OnDestroy()
         {
-            CoreEvents.SelectInteractable -= OnSelectInteractableEvent;
+            CoreEvents.SelectInteractableEvent -= OnSelectInteractableEvent;
         }
 
         private void OnSelectInteractableEvent(IInteractable interactable)

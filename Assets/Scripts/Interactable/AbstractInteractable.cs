@@ -4,8 +4,6 @@ namespace TPP.Scripts.Interactable
 {
     public abstract class AbstractInteractable : MonoBehaviour, IInteractable
     {
-        public string interactableName;
-
         public GameObject GetGameObject()
         {
             return gameObject;
