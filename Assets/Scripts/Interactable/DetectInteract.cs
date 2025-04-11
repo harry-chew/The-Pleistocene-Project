@@ -6,6 +6,9 @@ namespace TPP.Scripts.Player
 {
     public class DetectInteract : MonoBehaviour
     {
+        [Range(0.5f, 5f)]
+        public float interactRange;
+
         private Camera cam;
 
         private IInteractable selectedInteractable;
@@ -19,10 +22,25 @@ namespace TPP.Scripts.Player
             rayPoint = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, cam.nearClipPlane);
         }
 
+        private void Start()
+        {
+            SetSelectedInteractable(null);
+        }
+
         void Update()
         {
+            HandleDetection();
+
+            if (selectedInteractable != null && Input.GetKeyDown(KeyCode.E))
+            {
+                selectedInteractable.Interact();
+            }
+        }
+
+        private void HandleDetection()
+        {
             Ray ray = cam.ScreenPointToRay(rayPoint);
-            if (Physics.Raycast(ray, out RaycastHit hitInfo, 5f))
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, interactRange))
             {
                 if (hitInfo.collider.TryGetComponent<IInteractable>(out IInteractable interactable))
                 {
