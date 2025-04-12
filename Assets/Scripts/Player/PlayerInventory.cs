@@ -48,5 +48,20 @@ namespace TPP.Scripts.Player
                 }
             }
         }
+
+        private void RemoveItem(Item itemToRemove)
+        {
+            if (items == null || items.Count == 0)
+                return;
+
+            foreach (Item loopItem in items)
+            {
+                if (loopItem.itemName == itemToRemove.itemName)
+                {
+                    items.Remove(loopItem);
+                    break;
+                }
+            }
+        }
     }
 }
