@@ -9,12 +9,12 @@ namespace TPP.Scripts.UI
     {
         public GameObject interactPanel;
 
-        void Start()
+        private void OnEnable()
         {
             CoreEvents.SelectInteractableEvent += OnSelectInteractableEvent;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             CoreEvents.SelectInteractableEvent -= OnSelectInteractableEvent;
         }
