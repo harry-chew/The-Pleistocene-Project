@@ -1,18 +1,12 @@
-using TPP.Scripts.Events;
 using TPP.Scripts.Items;
-using UnityEngine;
 
 namespace TPP.Scripts.Interactable
 {
-    public class MushroomInteractable : AbstractInteractable, IInteractable
+    public class MushroomInteractable : CollectItemInteractable
     {
-        public Item item;
-
-        public override void Interact()
+        private void Start()
         {
-            Debug.Log($"interact on {transform.name}");
-            CoreEvents.FirePlayerCollectItemEvent(item);
-            Destroy(gameObject);
+            item = ItemFactory.CreateMushroomItem();
         }
     }
 }
