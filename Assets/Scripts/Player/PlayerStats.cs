@@ -21,6 +21,11 @@ namespace TPP.Scripts
         public void Tick()
         {
             hunger--;
+
+            if (hunger <= 0)
+            {
+                Debug.Log("you are starving. eat very soon");
+            }
         }
 
         private IEnumerator TickCoroutine()
