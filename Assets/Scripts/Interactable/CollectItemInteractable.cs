@@ -17,7 +17,8 @@ namespace TPP.Scripts.Interactable
             }
 
             Debug.Log($"interact on {transform.name}");
-            CoreEvents.FirePlayerCollectItemEvent(item);
+            Item copied = new Item(item.itemName, item.weight, item.quantity);
+            CoreEvents.FirePlayerCollectItemEvent(copied);
             Destroy(gameObject);
         }
     }
