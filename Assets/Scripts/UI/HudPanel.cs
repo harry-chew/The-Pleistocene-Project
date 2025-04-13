@@ -2,12 +2,13 @@ using System;
 using TPP.Scripts.Events;
 using TPP.Scripts.Interactable;
 using UnityEngine;
+using DG.Tweening;
 
 namespace TPP.Scripts.UI
 {
     public class HudPanel : MonoBehaviour
     {
-        public GameObject interactPanel;
+        public CanvasGroup interactPanel;
 
         private void OnEnable()
         {
@@ -21,7 +22,7 @@ namespace TPP.Scripts.UI
 
         private void OnSelectInteractableEvent(IInteractable interactable)
         {
-            interactPanel.SetActive(interactable != null);
+            DOTween.To(() => interactPanel.alpha, x => interactPanel.alpha = x, interactable == null ? 0f : 1f, 0.2f);
         }
     }
 }
