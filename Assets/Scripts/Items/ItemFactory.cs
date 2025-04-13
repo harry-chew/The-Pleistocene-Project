@@ -22,5 +22,12 @@ namespace TPP.Scripts.Items
 
             return fiber;
         }
+
+        public static Item CreateBerryItem()
+        {
+            Item berries = new Item("Berries", 1, 5);
+
+            return berries;
+        }
     }
 }

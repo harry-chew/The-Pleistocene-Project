@@ -8,5 +8,12 @@ namespace TPP.Scripts.Interactable
         {
             item = ItemFactory.CreateMushroomItem();
         }
+
+        public override void Interact()
+        {
+            base.Interact();
+
+            Destroy(gameObject);
+        }
     }
 }

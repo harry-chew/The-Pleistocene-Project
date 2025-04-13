@@ -769,6 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunger: 0
   startingHunger: 100
+  hungerTickRate: 1
 --- !u!114 &7196346506264572479
 MonoBehaviour:
   m_ObjectHideFlags: 0

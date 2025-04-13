@@ -7,6 +7,7 @@ namespace TPP.Scripts
     {
         public int hunger;
         public int startingHunger;
+        public float hungerTickRate;
 
         private void Awake()
         {
@@ -25,6 +26,7 @@ namespace TPP.Scripts
             if (hunger <= 0)
             {
                 Debug.Log("you are starving. eat very soon");
+                hunger = 0;
             }
         }
 
@@ -32,7 +34,7 @@ namespace TPP.Scripts
         {
             while (Time.timeScale > 0)
             {
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(hungerTickRate);
                 Tick();
             }
         }
