@@ -47,6 +47,8 @@ namespace TPP.Scripts.Player
                     return;
                 }
             }
+
+            items.Add(itemToAdd);
         }
 
         private void RemoveItem(Item itemToRemove)
