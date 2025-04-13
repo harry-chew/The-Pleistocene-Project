@@ -15,5 +15,12 @@ namespace TPP.Scripts.Items
 
             return stick;
         }
+
+        public static Item CreateFiberItem()
+        {
+            Item fiber = new Item("Fiber", 1, 1);
+
+            return fiber;
+        }
     }
 }
