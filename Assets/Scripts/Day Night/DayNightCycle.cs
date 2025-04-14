@@ -17,6 +17,13 @@ namespace TPP.Scripts.Systems
         [Range(1f, 60f)]
         public float dayNightRateMultiplier;
 
+        public static float DayNightRateMultiplier;
+
+        private void Awake()
+        {
+            DayNightRateMultiplier = dayNightRateMultiplier;
+        }
+
         private void UpdateLighting(float timePercent)
         {
             RenderSettings.ambientLight = preset.ambientColor.Evaluate(timePercent);

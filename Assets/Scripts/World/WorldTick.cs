@@ -1,5 +1,6 @@
 using System.Collections;
 using TPP.Scripts.Events;
+using TPP.Scripts.Systems;
 using UnityEngine;
 
 namespace TPP.Scripts.World
@@ -7,26 +8,23 @@ namespace TPP.Scripts.World
     public class WorldTick : MonoBehaviour
     {
         public float tickTimer;
+        public float dayNightCycleMultiplier;
+        public float currentTick;
 
-        private Coroutine tick;
-
-        private void OnEnable()
+        private void Start()
         {
-            tick = StartCoroutine(TickCoroutine());
+            dayNightCycleMultiplier = DayNightCycle.DayNightRateMultiplier;
+            tickTimer = dayNightCycleMultiplier / 24f;
         }
 
-        private void OnDisable()
+        private void Update()
         {
-            StopAllCoroutines();
-            tick = null;
-        }
-
-        private IEnumerator TickCoroutine()
-        {
-            while (true)
+            currentTick += Time.deltaTime;
+            if (currentTick >= tickTimer)
             {
-                yield return new WaitForSeconds(tickTimer);
                 CoreEvents.FireWorldTickEvent();
+                Debug.Log("tick");
+                currentTick = 0f;
             }
         }
     }

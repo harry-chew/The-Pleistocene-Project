@@ -4,7 +4,9 @@ namespace TPP.Scripts.Events
 {
     public enum WorldEventType
     {
-        Tick
+        Tick,
+        HourTick,
+        DayTick
     }
 
     public class WorldEventArgs : EventArgs

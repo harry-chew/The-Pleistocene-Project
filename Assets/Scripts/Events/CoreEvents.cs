@@ -27,5 +27,17 @@ namespace TPP.Scripts.Events
             WorldEventArgs args = new WorldEventArgs(WorldEventType.Tick);
             WorldEvent?.Invoke(null, args);
         }
+
+        public static void FireWorldTickHourEvent()
+        {
+            WorldEventArgs args = new WorldEventArgs(WorldEventType.HourTick);
+            WorldEvent?.Invoke(null, args);
+        }
+
+        public static void FireWorldTickDayEvent()
+        {
+            WorldEventArgs args = new WorldEventArgs(WorldEventType.DayTick);
+            WorldEvent?.Invoke(null, args);
+        }
     }
 }
