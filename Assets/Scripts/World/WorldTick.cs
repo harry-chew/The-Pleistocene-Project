@@ -10,11 +10,12 @@ namespace TPP.Scripts.World
         public float tickTimer;
         public float dayNightCycleMultiplier;
         public float currentTick;
+        public int ticks;
 
         private void Start()
         {
             dayNightCycleMultiplier = DayNightCycle.DayNightRateMultiplier;
-            tickTimer = dayNightCycleMultiplier / 24f;
+            tickTimer = dayNightCycleMultiplier;
         }
 
         private void Update()
@@ -23,8 +24,18 @@ namespace TPP.Scripts.World
             if (currentTick >= tickTimer)
             {
                 CoreEvents.FireWorldTickEvent();
-                Debug.Log("tick");
+                ticks++;
                 currentTick = 0f;
+
+                if (ticks % 60 == 0)
+                {
+                    CoreEvents.FireWorldTickHourEvent();
+                }
+                if (ticks % 60 * 24 == 0)
+                {
+                    CoreEvents.FireWorldTickDayEvent();
+                    ticks = 0;
+                }
             }
         }
     }
