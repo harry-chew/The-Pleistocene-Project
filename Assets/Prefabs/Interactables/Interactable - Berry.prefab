@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 1420748651283353073}
   - component: {fileID: 7750033657705917224}
   m_Layer: 0
-  m_Name: Bush_01
+  m_Name: Interactable - Berry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
