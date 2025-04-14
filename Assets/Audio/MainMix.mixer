@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-9149712790135424654
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: ec2a42af72e6bfa4a8c332021d091928
+  m_EffectName: Attenuation
+  m_MixLevel: ab0f633df4f0c574e86e3ddc21d35971
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-7480644027542103355
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -28,6 +42,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-2179674980535483166
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bees
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b0a6ef7f1cf5f4445a5fa3ac1bd9c72d
+  m_Children: []
+  m_Volume: 3bba4f056992bef4585deb65a41189d1
+  m_Pitch: e33bd286936c1044e8ddb9a82f0a8795
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -9149712790135424654}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-369662170225611495
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -70,6 +103,7 @@ AudioMixerController:
     - 84b24a5365c3bc948b9f0dcfaed02a39
     - 45dc281f5691f7c4e985e996cf08a51d
     - b6e8554928ed2594d925662dbd89921e
+    - b0a6ef7f1cf5f4445a5fa3ac1bd9c72d
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -131,6 +165,7 @@ AudioMixerGroupController:
   m_GroupID: ec3684bcc985c024399102c4bc152266
   m_Children:
   - {fileID: 7907436747033470704}
+  - {fileID: -2179674980535483166}
   m_Volume: 07356519157cb4442a569798a04facd5
   m_Pitch: eefcd706e35d6c649928ee115c3e3d54
   m_Send: 00000000000000000000000000000000

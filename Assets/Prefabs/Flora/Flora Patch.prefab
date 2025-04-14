@@ -69,7 +69,7 @@ MonoBehaviour:
   floraPrefab: {fileID: 1439904337943108576, guid: ef62619642b0df743b22dd5120c6ac4d,
     type: 3}
   maxFlora: 50
-  minStartSize: 1
+  minStartSize: 0.508
   maxStartSize: 1.5
-  maxGrowSize: 1.57
+  maxGrowSize: 1.884
   floras: []
