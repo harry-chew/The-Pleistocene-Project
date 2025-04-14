@@ -26908,41 +26908,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4218973725473323066, guid: fb913acc7594a084d920b3ad9f649d9a,
-        type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218973725473323066, guid: fb913acc7594a084d920b3ad9f649d9a,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218973725473323066, guid: fb913acc7594a084d920b3ad9f649d9a,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218973725473323066, guid: fb913acc7594a084d920b3ad9f649d9a,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158984902112293982, guid: fb913acc7594a084d920b3ad9f649d9a,
-        type: 3}
-      propertyPath: m_Antialiasing
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158984902112293982, guid: fb913acc7594a084d920b3ad9f649d9a,
-        type: 3}
-      propertyPath: m_AntialiasingQuality
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158984902112293982, guid: fb913acc7594a084d920b3ad9f649d9a,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7755498398525236535, guid: fb913acc7594a084d920b3ad9f649d9a,
         type: 3}
       propertyPath: m_Name

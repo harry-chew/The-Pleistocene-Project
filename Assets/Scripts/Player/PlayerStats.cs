@@ -1,41 +1,42 @@
+using System;
 using System.Collections;
+using TPP.Scripts.Events;
 using UnityEngine;
 
 namespace TPP.Scripts
 {
     public class PlayerStats : MonoBehaviour
     {
+        [Header("Hunger")]
         public int hunger;
         public int startingHunger;
-        public float hungerTickRate;
+
+        [Header("Thirst")]
+        public int thirst;
+        public int startingThirst;
 
         private void Awake()
         {
             hunger = startingHunger;
+            thirst = startingThirst;
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            StartCoroutine(TickCoroutine());
+            CoreEvents.WorldEvent += OnWorldEvent;
         }
 
-        public void Tick()
+        private void OnDisable()
         {
-            hunger--;
+            CoreEvents.WorldEvent -= OnWorldEvent;
+        }
 
-            if (hunger <= 0)
+        private void OnWorldEvent(object sender, WorldEventArgs e)
+        {
+            if (e.eventType == WorldEventType.Tick)
             {
-                Debug.Log("you are starving. eat very soon");
-                hunger = 0;
-            }
-        }
-
-        private IEnumerator TickCoroutine()
-        {
-            while (Time.timeScale > 0)
-            {
-                yield return new WaitForSeconds(hungerTickRate);
-                Tick();
+                hunger--;
+                thirst--;
             }
         }
     }
