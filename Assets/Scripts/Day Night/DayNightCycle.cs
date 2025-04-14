@@ -14,6 +14,9 @@ namespace TPP.Scripts.Systems
         [Range(0f, 24f)]
         public float timeOfDay;
 
+        [Range(1f, 60f)]
+        public float dayNightRateMultiplier;
+
         private void UpdateLighting(float timePercent)
         {
             RenderSettings.ambientLight = preset.ambientColor.Evaluate(timePercent);
@@ -31,7 +34,7 @@ namespace TPP.Scripts.Systems
 
             if (Application.isPlaying)
             {
-                timeOfDay += Time.deltaTime;
+                timeOfDay += Time.deltaTime / dayNightRateMultiplier;
                 timeOfDay %= 24f;
                 UpdateLighting(timeOfDay / 24f);
             }
