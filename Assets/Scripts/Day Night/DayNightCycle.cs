@@ -18,7 +18,7 @@ namespace TPP.Scripts.Systems
         {
             RenderSettings.ambientLight = preset.ambientColor.Evaluate(timePercent);
             RenderSettings.fogColor = preset.fogColor.Evaluate(timePercent);
-
+            RenderSettings.fogDensity = preset.fogIntensity.Evaluate(timePercent).a;
 
             sun.color = preset.lightColor.Evaluate(timePercent);
             sun.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 170f, 0));

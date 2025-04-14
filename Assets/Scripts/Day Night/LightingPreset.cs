@@ -10,5 +10,6 @@ namespace TPP.Scripts.Systems
         public Gradient ambientColor;
         public Gradient lightColor;
         public Gradient fogColor;
+        public Gradient fogIntensity;
     }
 }
