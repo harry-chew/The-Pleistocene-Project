@@ -29,5 +29,12 @@ namespace TPP.Scripts.Items
 
             return berries;
         }
+
+        public static Item CreateRockItem()
+        {
+            Item rock = new Item("Rock", 1, 1);
+
+            return rock;
+        }
     }
 }
