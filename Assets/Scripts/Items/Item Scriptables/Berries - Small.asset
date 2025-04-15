@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Berries
   weight: 1
   quantity: 5
-  interactClip: {fileID: 0}
+  interactClip: {fileID: 8300000, guid: 0b56aaaab08bd6d4482369f5a9d61d85, type: 3}

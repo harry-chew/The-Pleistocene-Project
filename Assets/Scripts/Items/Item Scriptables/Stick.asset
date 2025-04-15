@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Stick
   weight: 1
   quantity: 1
-  interactClip: {fileID: 0}
+  interactClip: {fileID: 8300000, guid: 2f3af1efca048254895a5200ada5b637, type: 3}

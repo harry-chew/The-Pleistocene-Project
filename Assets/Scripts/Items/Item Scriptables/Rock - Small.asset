@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Small Rock
   weight: 1
   quantity: 1
-  interactClip: {fileID: 8300000, guid: 6f5579f9825b01f4e8ac6fda7cb6b589, type: 3}
+  interactClip: {fileID: 8300000, guid: fb37e8decea3ec14db1da8c678e119f2, type: 3}
