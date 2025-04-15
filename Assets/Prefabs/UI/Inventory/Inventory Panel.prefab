@@ -77,3 +77,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySlotPrefab: {fileID: 4390275274194592411, guid: b664f94ac0cecad4591806070c3902df,
     type: 3}
+  maxSlots: 8

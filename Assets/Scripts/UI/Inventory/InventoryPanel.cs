@@ -12,6 +12,9 @@ namespace TPP.Scripts.UI
 
         private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
+        [Range(1, 8)]
+        public int maxSlots;
+
         private void OnEnable()
         {
             CoreEvents.ItemEvent += OnItemEvent;
@@ -26,8 +29,11 @@ namespace TPP.Scripts.UI
         {
             if (e.eventType == ItemEventType.Collect)
             {
+                if (inventorySlots == null)
+                    inventorySlots = new List<InventorySlot>();
+
                 Item item = new Item(e.item);
-                if (!HasInventoryItem(item))
+                if (!HasInventoryItem(item) && inventorySlots.Count < maxSlots)
                 {
                     InventorySlot slot = Instantiate(inventorySlotPrefab, transform);
                     slot.Init(item);
@@ -74,6 +80,53 @@ namespace TPP.Scripts.UI
             }
 
             return null;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SelectSlot(0);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SelectSlot(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SelectSlot(2);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SelectSlot(3);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                SelectSlot(4);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                SelectSlot(5);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha7))
+            {
+                SelectSlot(6);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha8))
+            {
+                SelectSlot(7);
+            }
+        }
+
+        private void SelectSlot(int index)
+        {
+            if (inventorySlots == null || inventorySlots.Count == 0)
+                return;
+
+            for (int i = 0; i < inventorySlots.Count; i++)
+            {
+                inventorySlots[i].SelectSlot(index == i);
+            }
         }
     }
 }
