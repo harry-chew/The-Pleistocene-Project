@@ -1317,10 +1317,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 985313942}
     m_Modifications:
+    - target: {fileID: 1244988320753078682, guid: 686f1ba0c365401498b47791eab8078b,
+        type: 3}
+      propertyPath: maxFlora
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.13
+      value: -11.85
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -1330,7 +1335,7 @@ PrefabInstance:
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.98
+      value: 1.74
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -1375,7 +1380,7 @@ PrefabInstance:
     - target: {fileID: 8856980034849792258, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_Radius
-      value: 4.83
+      value: 6.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4324,7 +4329,7 @@ PrefabInstance:
     - target: {fileID: 1244988320753078682, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: maxFlora
-      value: 20
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -4380,6 +4385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flora Patch (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856980034849792258, guid: 686f1ba0c365401498b47791eab8078b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4560,12 +4570,12 @@ PrefabInstance:
     - target: {fileID: 1244988320753078682, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: maxFlora
-      value: 36
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.69
+      value: 10.62
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -4575,7 +4585,7 @@ PrefabInstance:
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.74
+      value: -12.92
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -4620,7 +4630,7 @@ PrefabInstance:
     - target: {fileID: 8856980034849792258, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_Radius
-      value: 4.41
+      value: 6.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5160,7 +5170,7 @@ PrefabInstance:
     - target: {fileID: 1244988320753078682, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: maxFlora
-      value: 14
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -5220,7 +5230,7 @@ PrefabInstance:
     - target: {fileID: 8856980034849792258, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_Radius
-      value: 2.96
+      value: 4.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15548,12 +15558,12 @@ PrefabInstance:
     - target: {fileID: 1244988320753078682, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: maxFlora
-      value: 18
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.09
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -15563,7 +15573,7 @@ PrefabInstance:
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.81
+      value: 10.17
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -15608,7 +15618,7 @@ PrefabInstance:
     - target: {fileID: 8856980034849792258, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_Radius
-      value: 3.21
+      value: 6.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18335,7 +18345,7 @@ PrefabInstance:
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.15
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
@@ -18345,7 +18355,7 @@ PrefabInstance:
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.66
+      value: -2.25
       objectReference: {fileID: 0}
     - target: {fileID: 6089533250701245321, guid: 686f1ba0c365401498b47791eab8078b,
         type: 3}
