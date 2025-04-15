@@ -16,7 +16,7 @@ namespace TPP.Scripts.Events
             SelectInteractableEvent?.Invoke(interactable);
         }
 
-        public static void FirePlayerCollectItemEvent(Item item)
+        public static void FirePlayerCollectItemEvent(ItemSO item)
         {
             ItemEventArgs args = new ItemEventArgs(ItemEventType.Collect, item);
             ItemEvent?.Invoke(null, args);

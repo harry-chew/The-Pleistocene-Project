@@ -13,7 +13,6 @@ namespace TPP.Scripts.Interactable
         private void Awake()
         {
             canInteract = true;
-            item = ItemFactory.CreateBerryItem();
         }
 
         private void Start()

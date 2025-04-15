@@ -27,7 +27,8 @@ namespace TPP.Scripts.Player
                 if (e.item == null)
                     return;
 
-                AddItem(e.item);
+                Item item = new Item(e.item);
+                AddItem(item);
             }
         }
 

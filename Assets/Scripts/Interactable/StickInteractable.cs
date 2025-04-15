@@ -7,11 +7,6 @@ namespace TPP.Scripts.Interactable
     {
         private LivingTree tree;
 
-        void Start()
-        {
-            item = ItemFactory.CreateWoodStickItem();
-        }
-
         public void Init(LivingTree tree = null)
         {
             this.tree = tree;    

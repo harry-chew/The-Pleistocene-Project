@@ -6,19 +6,18 @@ namespace TPP.Scripts.Interactable
 {
     public class CollectItemInteractable : AbstractInteractable
     {
-        public Item item;
+        public ItemSO itemSO;
 
         public override void Interact()
         {
-            if (item == null)
+            if (itemSO == null)
             {
                 Debug.LogError("You must set the item that will be picked up");
                 return;
             }
 
             Debug.Log($"interact on {transform.name}");
-            Item copied = new Item(item.itemName, item.weight, item.quantity);
-            CoreEvents.FirePlayerCollectItemEvent(copied);
+            CoreEvents.FirePlayerCollectItemEvent(itemSO);
         }
     }
 }

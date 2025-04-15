@@ -26,21 +26,20 @@ namespace TPP.Scripts.UI
         {
             if (e.eventType == ItemEventType.Collect)
             {
-                if (!HasInventoryItem(e.item))
+                Item item = new Item(e.item);
+                if (!HasInventoryItem(item))
                 {
                     InventorySlot slot = Instantiate(inventorySlotPrefab, transform);
-                    slot.item = e.item;
-                    slot.Init(slot.item.quantity);
+                    slot.Init(item);
                     inventorySlots.Add(slot);
                 }
                 else
                 {
-                    InventorySlot slot = GetInventorySlot(e.item);
+                    InventorySlot slot = GetInventorySlot(item);
                     if (slot == null)
                         return;
 
-                    slot.item.quantity += e.item.quantity;
-                    slot.Init(slot.item.quantity);
+                    slot.UpdateQuantity(e.item.quantity);
                 }
             }
         }

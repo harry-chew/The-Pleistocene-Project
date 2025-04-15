@@ -2,7 +2,7 @@ using TMPro;
 using TPP.Scripts.Items;
 using UnityEngine;
 
-namespace TPP
+namespace TPP.Scripts.UI
 {
     public class InventorySlot : MonoBehaviour
     {
@@ -10,9 +10,16 @@ namespace TPP
 
         public Item item;
 
-        public void Init(int quantity)
+        public void Init(Item item)
         {
-            itemCount.text = quantity.ToString();
+            this.item = item;
+            itemCount.text = item.quantity.ToString();
+        }
+
+        public void UpdateQuantity(int quantity)
+        {
+            item.quantity += quantity;
+            itemCount.text = item.quantity.ToString();
         }
     }
 }

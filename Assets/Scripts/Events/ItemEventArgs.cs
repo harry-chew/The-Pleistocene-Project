@@ -11,9 +11,9 @@ namespace TPP.Scripts.Events
     public class ItemEventArgs : EventArgs
     {
         public ItemEventType eventType;
-        public Item item;
+        public ItemSO item;
 
-        public ItemEventArgs(ItemEventType eventType, Item item)
+        public ItemEventArgs(ItemEventType eventType, ItemSO item)
         {
             this.eventType = eventType;
             this.item = item;
