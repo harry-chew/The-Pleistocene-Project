@@ -7,6 +7,7 @@ namespace TPP.Scripts.Flora
 {
     public class FloraPatch : MonoBehaviour
     {
+        public GameObject[] floraPrefabs;
         public GameObject floraPrefab;
         public int maxFlora;
         [Range(0.1f, 1f)]
@@ -55,6 +56,15 @@ namespace TPP.Scripts.Flora
             }
         }
 
+        private GameObject GetRandomFlora()
+        {
+            if (floraPrefabs.Length == 0)
+                return floraPrefab;
+
+            int random = UnityEngine.Random.Range(0, floraPrefabs.Length);
+            return floraPrefabs[random];
+        }
+
         private Vector3 GetRandomSpawnPosition()
         {
             float randomX = UnityEngine.Random.Range(-sphereCollider.radius, sphereCollider.radius);
@@ -77,7 +87,8 @@ namespace TPP.Scripts.Flora
             if (floras == null)
                 floras = new List<GameObject>();
 
-            GameObject spawnedFlora = Instantiate(floraPrefab, GetRandomSpawnPosition(), GetRandomSpawnRotation(), transform);
+            GameObject randomFlora = GetRandomFlora();
+            GameObject spawnedFlora = Instantiate(randomFlora, GetRandomSpawnPosition(), GetRandomSpawnRotation(), transform);
             float randomSize = UnityEngine.Random.Range(minStartSize, maxStartSize);
             spawnedFlora.transform.localScale = new Vector3(randomSize, randomSize, randomSize);
             floras.Add(spawnedFlora);

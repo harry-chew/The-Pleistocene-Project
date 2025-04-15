@@ -66,6 +66,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef434a4177138054da2b0ca8bb394f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floraPrefabs:
+  - {fileID: 8123141273917358956, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
+  - {fileID: 1439904337943108576, guid: ef62619642b0df743b22dd5120c6ac4d, type: 3}
+  - {fileID: 2304540294968618315, guid: b8217b9c1183a5144b666d1dd63980c4, type: 3}
+  - {fileID: 2954823824624447290, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
+  - {fileID: 4400482160171448048, guid: 18bb023d75a113f4cb8d1452371f5c0e, type: 3}
   floraPrefab: {fileID: 1439904337943108576, guid: ef62619642b0df743b22dd5120c6ac4d,
     type: 3}
   maxFlora: 50
