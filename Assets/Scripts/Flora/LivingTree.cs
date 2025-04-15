@@ -30,7 +30,7 @@ namespace TPP.Scripts.Flora
 
         private void OnWorldEvent(object sender, WorldEventArgs e)
         {
-            if (e.eventType == WorldEventType.Tick)
+            if (e.eventType == WorldEventType.HourTick)
             {
                 if (sticks == null)
                     sticks = new List<StickInteractable>();
