@@ -53,6 +53,21 @@ namespace TPP.Scripts.Flora
                     return;
 
                 GrowFlora();
+
+                if (floras.Count < maxFlora)
+                {
+                    SpawnFlora();
+                }
+            }
+            if (e.eventType == WorldEventType.HourTick)
+            {
+                if (floras == null)
+                    return;
+
+                if (floras.Count < maxFlora)
+                {
+                    SpawnFlora();
+                }
             }
         }
 
@@ -97,6 +112,13 @@ namespace TPP.Scripts.Flora
         private void GrowFlora()
         {
             int randIndex = UnityEngine.Random.Range(0, floras.Count);
+
+            GameObject floraToGrow = floras[randIndex];
+            if (floraToGrow == null)
+            {
+                floras.Remove(floraToGrow);
+                return;
+            }
 
             Transform tran = floras[randIndex].transform;
             if (tran == null)
