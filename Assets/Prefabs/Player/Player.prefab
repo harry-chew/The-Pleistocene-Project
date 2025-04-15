@@ -237,7 +237,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0
-  MaxDistance: 2.5
+  MaxDistance: 1.63
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -692,6 +692,7 @@ GameObject:
   - component: {fileID: 8881591943505602101}
   - component: {fileID: 5499604020868741377}
   - component: {fileID: 7196346506264572479}
+  - component: {fileID: 5769659896260052217}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -920,6 +921,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e90d3f5d95699644994e8c3d6ae60d6f, type: 3}
   - {fileID: 8300000, guid: feb7096be53c95f45999b1117f3db5fd, type: 3}
   - {fileID: 8300000, guid: 65e5e2612ff4f7a4e87ecfed8a191ad3, type: 3}
+--- !u!114 &5769659896260052217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755498398525236535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ac563f6bb6d494aa44b48d2a7a1e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAudioSource: {fileID: 210383755858767431}
 --- !u!1 &7759649064488086230
 GameObject:
   m_ObjectHideFlags: 0
