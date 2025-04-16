@@ -1,3 +1,4 @@
+using System;
 using TPP.Scripts.Environment;
 using TPP.Scripts.Events;
 using TPP.Scripts.Systems;
@@ -29,11 +30,13 @@ namespace TPP.Scripts
         private void OnEnable()
         {
             CoreEvents.WorldEvent += OnWorldEvent;
+            CoreEvents.DrinkWaterEvent += OnDrinkWaterEvent;
         }
 
         private void OnDisable()
         {
             CoreEvents.WorldEvent -= OnWorldEvent;
+            CoreEvents.DrinkWaterEvent -= OnDrinkWaterEvent;
         }
 
         private void OnWorldEvent(object sender, WorldEventArgs e)
@@ -47,6 +50,15 @@ namespace TPP.Scripts
 
                 CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
             }
+        }
+
+        private void OnDrinkWaterEvent(int waterAmount)
+        {
+            thirst += waterAmount;
+            if (thirst >= startingThirst)
+                thirst = startingThirst;
+
+            CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
         }
 
         private void HandleTemperature()

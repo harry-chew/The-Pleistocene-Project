@@ -11,6 +11,7 @@ namespace TPP.Scripts.Events
         public static EventHandler<ItemEventArgs> ItemEvent;
         public static EventHandler<WorldEventArgs> WorldEvent;
         public static EventHandler<PlayerEventArgs> PlayerEvent;
+        public static Action<int> DrinkWaterEvent;
 
         public static void FireSelectInteractableEvent(IInteractable interactable)
         {
@@ -45,6 +46,11 @@ namespace TPP.Scripts.Events
         {
             PlayerEventArgs args = new PlayerEventArgs(hunger, thirst, temperature);
             PlayerEvent?.Invoke(null, args);
+        }
+
+        public static void FireDrinkWaterEvent(int waterAmount)
+        {
+            DrinkWaterEvent?.Invoke(waterAmount);
         }
     }
 }
