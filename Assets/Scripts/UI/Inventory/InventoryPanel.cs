@@ -8,12 +8,15 @@ namespace TPP.Scripts.UI
 {
     public class InventoryPanel : MonoBehaviour
     {
+        [Header("Slot Prefab")]
         public InventorySlot inventorySlotPrefab;
 
-        private List<InventorySlot> inventorySlots = new List<InventorySlot>();
-
+        [Space(10)]
+        [Header("Properties")]
         [Range(1, 8)]
         public int maxSlots;
+
+        private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
         private void OnEnable()
         {

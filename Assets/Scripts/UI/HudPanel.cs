@@ -1,8 +1,7 @@
-using System;
+using DG.Tweening;
 using TPP.Scripts.Events;
 using TPP.Scripts.Interactable;
 using UnityEngine;
-using DG.Tweening;
 
 namespace TPP.Scripts.UI
 {

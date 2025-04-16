@@ -1,6 +1,4 @@
-﻿using System;
-using TPP.Scripts.Events;
-using TPP.Scripts.Items;
+﻿using TPP.Scripts.Events;
 using UnityEngine;
 
 namespace TPP.Scripts.Interactable
@@ -10,11 +8,6 @@ namespace TPP.Scripts.Interactable
         public GameObject berries;
         public bool canInteract;
 
-        private void Awake()
-        {
-            canInteract = true;
-        }
-
         private void Start()
         {
             CoreEvents.WorldEvent += OnWorldEvent;
@@ -23,6 +16,11 @@ namespace TPP.Scripts.Interactable
         private void OnDestroy()
         {
             CoreEvents.WorldEvent -= OnWorldEvent;
+        }
+
+        private void Awake()
+        {
+            canInteract = true;
         }
 
         private void OnWorldEvent(object sender, WorldEventArgs e)

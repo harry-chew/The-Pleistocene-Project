@@ -1,5 +1,3 @@
-using TPP.Scripts.Items;
-
 namespace TPP.Scripts.Interactable
 {
     public class RockInteractable : CollectItemInteractable

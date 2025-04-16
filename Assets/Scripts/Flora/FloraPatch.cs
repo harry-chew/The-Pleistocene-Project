@@ -7,8 +7,12 @@ namespace TPP.Scripts.Flora
 {
     public class FloraPatch : MonoBehaviour
     {
+        [Header("Prefabs")]
         public GameObject[] floraPrefabs;
         public GameObject floraPrefab;
+
+        [Space(10)]
+        [Header("Properties")]
         public int maxFlora;
         [Range(0.1f, 1f)]
         public float minStartSize;
@@ -16,12 +20,23 @@ namespace TPP.Scripts.Flora
         public float maxStartSize;
         [Range(1.51f, 2f)]
         public float maxGrowSize;
-        public List<GameObject> floras = new List<GameObject>();
+
+        private List<GameObject> floras = new List<GameObject>();
         private SphereCollider sphereCollider;
 
         private void Awake()
         {
             sphereCollider = GetComponent<SphereCollider>();
+        }
+
+        private void OnEnable()
+        {
+            CoreEvents.WorldEvent += OnWorldEvent;
+        }
+
+        private void OnDisable()
+        {
+            CoreEvents.WorldEvent -= OnWorldEvent;
         }
 
         private void Start()
@@ -33,16 +48,6 @@ namespace TPP.Scripts.Flora
             {
                 SpawnFlora();
             }
-        }
-
-        private void OnEnable()
-        {
-            CoreEvents.WorldEvent += OnWorldEvent;
-        }
-
-        private void OnDisable()
-        {
-            CoreEvents.WorldEvent -= OnWorldEvent;   
         }
 
         private void OnWorldEvent(object sender, WorldEventArgs e)

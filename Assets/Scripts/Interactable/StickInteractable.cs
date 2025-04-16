@@ -1,5 +1,4 @@
 using TPP.Scripts.Flora;
-using TPP.Scripts.Items;
 
 namespace TPP.Scripts.Interactable
 {

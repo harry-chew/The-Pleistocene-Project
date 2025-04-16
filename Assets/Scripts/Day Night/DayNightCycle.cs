@@ -43,6 +43,7 @@ namespace TPP.Scripts.Systems
             {
                 timeOfDay += Time.deltaTime / dayNightRateMultiplier;
                 timeOfDay %= 24f;
+
                 UpdateLighting(timeOfDay / 24f);
             }
             else

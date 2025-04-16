@@ -6,13 +6,12 @@ namespace TPP.Scripts.Player
 {
     public class DetectInteract : MonoBehaviour
     {
+        [Header("Properties")]
         [Range(0.5f, 5f)]
         public float interactRange;
 
         private Camera cam;
-
         private IInteractable selectedInteractable;
-
         private Vector3 rayPoint;
 
         private void Awake()

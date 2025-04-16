@@ -6,6 +6,7 @@ namespace TPP.Scripts.Interactable
 {
     public class CollectItemInteractable : AbstractInteractable
     {
+        [Header("Item Scriptable")]
         public ItemSO itemSO;
 
         public override void Interact()

@@ -1,4 +1,3 @@
-using System.Collections;
 using TPP.Scripts.Events;
 using TPP.Scripts.Systems;
 using UnityEngine;
@@ -7,6 +6,7 @@ namespace TPP.Scripts.World
 {
     public class WorldTick : MonoBehaviour
     {
+        [Header("Properties")]
         public float tickTimer;
         public float dayNightCycleMultiplier;
         public float currentTick;

@@ -8,14 +8,21 @@ namespace TPP.Scripts.UI
 {
     public class InventorySlot : MonoBehaviour
     {
+        [Header("Slot Components")]
         public Image border;
         public Image icon;
         public TextMeshProUGUI itemCount;
 
+        [Space(10)]
+        [Header("Border")]
         public Color borderColor;
         public Color selectedColor;
 
+        [Space(10)]
+        [Header("Item in Slot")]
         public Item item;
+
+        private float fontSize;
 
         public void Init(Item item)
         {
@@ -23,6 +30,7 @@ namespace TPP.Scripts.UI
             itemCount.text = item.quantity.ToString();
             border.color = borderColor;
             icon.sprite = item.icon;
+            fontSize = itemCount.fontSize;
         }
 
         public void SelectSlot(bool selected)
@@ -35,8 +43,11 @@ namespace TPP.Scripts.UI
             item.quantity += quantity;
             itemCount.text = item.quantity.ToString();
 
-            float fontSize = itemCount.fontSize;
+            TweenFontSizeOnUpdate();
+        }
 
+        private void TweenFontSizeOnUpdate()
+        {
             Sequence anim = DOTween.Sequence(itemCount);
             anim.Append(DOTween.To(() => itemCount.fontSize, x => itemCount.fontSize = x, fontSize * 1.1f, 0.1f));
             anim.Append(DOTween.To(() => itemCount.fontSize, x => itemCount.fontSize = x, fontSize, 0.1f));

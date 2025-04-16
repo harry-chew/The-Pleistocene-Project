@@ -12,13 +12,6 @@ namespace TPP.Scripts.Items
         public AudioClip interactClip;
         public Sprite icon;
 
-        public Item(string itemName, int weight, int quantity)
-        {
-            this.itemName = itemName;
-            this.weight = weight;
-            this.quantity = quantity;
-        }
-
         public Item(ItemSO itemSO)
         {
             itemName = itemSO.itemName;

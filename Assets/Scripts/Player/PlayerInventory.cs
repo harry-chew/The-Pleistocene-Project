@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TPP.Scripts.Events;
 using TPP.Scripts.Items;

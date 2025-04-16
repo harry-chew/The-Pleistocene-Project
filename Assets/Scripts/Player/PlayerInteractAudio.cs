@@ -20,11 +20,16 @@ namespace TPP.Scripts.Player
                 if (e.item == null || e.item.interactClip == null)
                     return;
 
-                interactAudioSource.clip = e.item.interactClip;
-                interactAudioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
-                interactAudioSource.volume = UnityEngine.Random.Range(0.9f, 1.1f);
-                interactAudioSource.Play();
+                PlayInteractAudio(e.item.interactClip);
             }
+        }
+
+        private void PlayInteractAudio(AudioClip clip)
+        {
+            interactAudioSource.clip = clip;
+            interactAudioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+            interactAudioSource.volume = UnityEngine.Random.Range(0.9f, 1.1f);
+            interactAudioSource.Play();
         }
     }
 }

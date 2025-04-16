@@ -6,14 +6,16 @@ namespace TPP.Scripts.Player
 {
     public class PlayerFootsteps : MonoBehaviour
     {
+        [Header("Audio Sources")]
         public AudioSource leftFoot;
         public AudioSource rightFoot;
 
+        [Space(10)]
+        [Header("Footsteps")]
         public List<AudioClip> footstepClips = new List<AudioClip>();
 
         private Rigidbody rb;
         private Coroutine footsteps;
-
         private float timer;
         private bool isMoving;
 

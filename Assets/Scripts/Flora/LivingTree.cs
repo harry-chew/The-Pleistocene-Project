@@ -8,14 +8,16 @@ namespace TPP.Scripts.Flora
 {
     public class LivingTree : MonoBehaviour
     {
+        [Header("Prefab")]
         public StickInteractable stickInteractablePrefab;
 
-        public List<StickInteractable> sticks = new List<StickInteractable>();
-
+        [Space(10)]
+        [Header("Properties")]
         public int maxSticks;
         [Range(1f, 5f)]
         public float maxSpawnRadius;
 
+        private List<StickInteractable> sticks = new List<StickInteractable>();
         private Bounds bounds;
 
         private void OnEnable()
