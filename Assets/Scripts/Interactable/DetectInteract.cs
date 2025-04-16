@@ -7,17 +7,15 @@ namespace TPP.Scripts.Player
     public class DetectInteract : MonoBehaviour
     {
         [Header("Properties")]
-        [Range(0.5f, 5f)]
+        [Range(0.5f, 15f)]
         public float interactRange;
 
-        private Camera cam;
+        public Camera cam;
         private IInteractable selectedInteractable;
         private Vector3 rayPoint;
 
         private void Awake()
         {
-            cam = GetComponent<Camera>();
-
             rayPoint = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, cam.nearClipPlane);
         }
 
@@ -30,7 +28,7 @@ namespace TPP.Scripts.Player
         {
             HandleDetection();
 
-            if (selectedInteractable != null && Input.GetKeyDown(KeyCode.E))
+            if (selectedInteractable != null && Input.GetKey(KeyCode.E))
             {
                 selectedInteractable.Interact();
             }
