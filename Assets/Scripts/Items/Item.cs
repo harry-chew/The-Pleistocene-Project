@@ -10,6 +10,7 @@ namespace TPP.Scripts.Items
         public int weight;
         public int quantity;
         public AudioClip interactClip;
+        public Sprite icon;
 
         public Item(string itemName, int weight, int quantity)
         {
@@ -24,6 +25,7 @@ namespace TPP.Scripts.Items
             weight = itemSO.weight;
             quantity = itemSO.quantity;
             interactClip = itemSO.interactClip;
+            icon = itemSO.icon;
         }
     }
 }

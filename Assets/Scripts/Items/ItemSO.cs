@@ -9,5 +9,6 @@ namespace TPP.Scripts.Items
         public int weight;
         public int quantity;
         public AudioClip interactClip;
+        public Sprite icon;
     }
 }

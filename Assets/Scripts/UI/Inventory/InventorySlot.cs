@@ -22,6 +22,7 @@ namespace TPP.Scripts.UI
             this.item = item;
             itemCount.text = item.quantity.ToString();
             border.color = borderColor;
+            icon.sprite = item.icon;
         }
 
         public void SelectSlot(bool selected)

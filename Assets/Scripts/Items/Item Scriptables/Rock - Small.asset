@@ -16,3 +16,4 @@ MonoBehaviour:
   weight: 1
   quantity: 1
   interactClip: {fileID: 8300000, guid: fb37e8decea3ec14db1da8c678e119f2, type: 3}
+  icon: {fileID: 21300000, guid: 99d1e506175aa76458c969aa6c17b7fb, type: 3}
