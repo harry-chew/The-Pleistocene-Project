@@ -13,6 +13,7 @@ namespace TPP.Scripts.Systems
         [Header("Variables")]
         [Range(0f, 24f)]
         public float timeOfDay;
+        private static float TimeOfDay;
 
         [Range(1f, 60f)]
         public float dayNightRateMultiplier;
@@ -43,13 +44,21 @@ namespace TPP.Scripts.Systems
             {
                 timeOfDay += Time.deltaTime / dayNightRateMultiplier;
                 timeOfDay %= 24f;
-
+                TimeOfDay = timeOfDay;
                 UpdateLighting(timeOfDay / 24f);
             }
             else
             {
                 UpdateLighting(timeOfDay / 24f);
             }
+        }
+
+        public static bool IsDayTime()
+        {
+            if (TimeOfDay >= 5f && TimeOfDay <= 20f)
+                return true;
+
+            return false;
         }
     }
 }

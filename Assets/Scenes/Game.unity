@@ -12580,7 +12580,7 @@ MonoBehaviour:
   sun: {fileID: 410087040}
   preset: {fileID: 11400000, guid: 5edbb9cfe73188440b328c9ee800539a, type: 2}
   timeOfDay: 13.3
-  dayNightRateMultiplier: 60
+  dayNightRateMultiplier: 1
 --- !u!1001 &1371800651
 PrefabInstance:
   m_ObjectHideFlags: 0

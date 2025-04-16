@@ -889,6 +889,8 @@ MonoBehaviour:
   startingHunger: 100
   thirst: 0
   startingThirst: 100
+  temperature: 0
+  startingTemperature: 37
 --- !u!114 &7196346506264572479
 MonoBehaviour:
   m_ObjectHideFlags: 0

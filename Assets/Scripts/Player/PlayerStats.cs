@@ -1,9 +1,11 @@
+using TPP.Scripts.Environment;
 using TPP.Scripts.Events;
+using TPP.Scripts.Systems;
 using UnityEngine;
 
 namespace TPP.Scripts
 {
-    public class PlayerStats : MonoBehaviour
+    public class PlayerStats : MonoBehaviour, IHeatable
     {
         [Header("Hunger")]
         public int hunger;
@@ -13,10 +15,15 @@ namespace TPP.Scripts
         public int thirst;
         public int startingThirst;
 
+        [Header("Temperature")]
+        public float temperature;
+        public float startingTemperature;
+
         private void Awake()
         {
             hunger = startingHunger;
             thirst = startingThirst;
+            temperature = startingTemperature;
         }
 
         private void OnEnable()
@@ -35,7 +42,23 @@ namespace TPP.Scripts
             {
                 hunger--;
                 thirst--;
+
+                HandleTemperature();
             }
+        }
+
+        private void HandleTemperature()
+        {
+            if (!DayNightCycle.IsDayTime())
+                temperature -= 0.75f;
+            else
+                temperature += 0.25f;
+        }
+
+        public void Heat(int heatStrength)
+        {
+            temperature += heatStrength;
+            Debug.Log(temperature);
         }
     }
 }
