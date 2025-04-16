@@ -44,6 +44,8 @@ namespace TPP.Scripts
                 thirst--;
 
                 HandleTemperature();
+
+                CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
             }
         }
 

@@ -10,6 +10,7 @@ namespace TPP.Scripts.Events
 
         public static EventHandler<ItemEventArgs> ItemEvent;
         public static EventHandler<WorldEventArgs> WorldEvent;
+        public static EventHandler<PlayerEventArgs> PlayerEvent;
 
         public static void FireSelectInteractableEvent(IInteractable interactable)
         {
@@ -38,6 +39,12 @@ namespace TPP.Scripts.Events
         {
             WorldEventArgs args = new WorldEventArgs(WorldEventType.DayTick);
             WorldEvent?.Invoke(null, args);
+        }
+
+        public static void FirePlayerStatsEvent(int hunger, int thirst, float temperature)
+        {
+            PlayerEventArgs args = new PlayerEventArgs(hunger, thirst, temperature);
+            PlayerEvent?.Invoke(null, args);
         }
     }
 }
