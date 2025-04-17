@@ -18,6 +18,7 @@ namespace TPP.Scripts.Interactable
             if (tree != null)
             {
                 tree.RemoveStick(this);
+                tree = null;
             }
 
             Destroy(gameObject);

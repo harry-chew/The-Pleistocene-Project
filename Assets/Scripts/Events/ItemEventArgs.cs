@@ -5,7 +5,8 @@ namespace TPP.Scripts.Events
 {
     public enum ItemEventType
     {
-        Collect
+        Collect,
+        Use
     }
 
     public class ItemEventArgs : EventArgs

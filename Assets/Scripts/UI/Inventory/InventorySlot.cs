@@ -46,6 +46,12 @@ namespace TPP.Scripts.UI
             item.quantity += quantity;
             itemCount.text = item.quantity.ToString();
 
+            if (item.quantity <= 0)
+            {
+                CoreEvents.FirePlayerSelectedItemEvent(null);
+                return;
+            }
+
             TweenFontSizeOnUpdate();
         }
 

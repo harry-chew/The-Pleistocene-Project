@@ -29,6 +29,36 @@ namespace TPP.Scripts.Player
                 Item item = new Item(e.item);
                 AddItem(item);
             }
+            else if (e.eventType == ItemEventType.Use)
+            {
+                if (e.item == null)
+                    return;
+
+                Item item = new Item(e.item);
+                ReduceItemQuantity(item);
+            }
+        }
+
+        private void ReduceItemQuantity(Item item)
+        {
+            if (items == null || items.Count == 0)
+                return;
+
+            Item itemToRemove = null;
+            foreach (Item loopItem in items)
+            {
+                if (item.itemName == loopItem.itemName)
+                {
+                    loopItem.quantity -= item.quantity;
+                    if (loopItem.quantity <= 0)
+                    {
+                        itemToRemove = loopItem;
+                        break;
+                    }
+                }
+            }
+
+            items.Remove(itemToRemove);
         }
 
         private void AddItem(Item itemToAdd)

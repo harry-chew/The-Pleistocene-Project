@@ -1,3 +1,4 @@
+using TPP.Scripts.Interactable;
 using UnityEngine;
 
 namespace TPP.Scripts.Items
@@ -11,5 +12,6 @@ namespace TPP.Scripts.Items
         public AudioClip interactClip;
         public Sprite icon;
         public GameObject itemPrefab;
+        public CollectItemInteractable interactableItem;
     }
 }

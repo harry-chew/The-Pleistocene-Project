@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TPP.Scripts.Interactable
 {
-    public class CollectItemInteractable : AbstractInteractable
+    public class CollectItemInteractable : AbstractInteractable, IUsable
     {
         [Header("Item Scriptable")]
         public ItemSO itemSO;
@@ -19,6 +19,12 @@ namespace TPP.Scripts.Interactable
 
             Debug.Log($"interact on {transform.name}");
             CoreEvents.FirePlayerCollectItemEvent(itemSO);
+        }
+
+        public virtual void Primary() 
+        {
+            CoreEvents.FirePlayerUseItemEvent(itemSO);
+            Debug.Log($"{itemSO.itemName} used");
         }
     }
 }

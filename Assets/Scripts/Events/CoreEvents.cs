@@ -25,6 +25,12 @@ namespace TPP.Scripts.Events
             ItemEvent?.Invoke(null, args);
         }
 
+        public static void FirePlayerUseItemEvent(ItemSO item)
+        {
+            ItemEventArgs args = new ItemEventArgs(ItemEventType.Use, item);
+            ItemEvent?.Invoke(null, args);
+        }
+
         public static void FirePlayerSelectedItemEvent(Item item)
         {
             SelectedItemEvent?.Invoke(item);

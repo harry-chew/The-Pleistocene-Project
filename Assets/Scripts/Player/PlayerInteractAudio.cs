@@ -15,7 +15,7 @@ namespace TPP.Scripts.Player
 
         private void OnItemEvent(object sender, ItemEventArgs e)
         {
-            if (e.eventType == ItemEventType.Collect)
+            if (e.eventType == ItemEventType.Collect || e.eventType == ItemEventType.Use)
             {
                 if (e.item == null || e.item.interactClip == null)
                     return;

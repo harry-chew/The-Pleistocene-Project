@@ -31,6 +31,7 @@ namespace TPP.Scripts
         {
             CoreEvents.WorldEvent += OnWorldEvent;
             CoreEvents.DrinkWaterEvent += OnDrinkWaterEvent;
+            CoreEvents.ItemEvent += OnItemEvent;
         }
 
         private void OnDisable()
@@ -49,6 +50,19 @@ namespace TPP.Scripts
                 HandleTemperature();
 
                 CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
+            }
+        }
+
+
+        private void OnItemEvent(object sender, ItemEventArgs e)
+        {
+            if (e.eventType == ItemEventType.Use)
+            {
+                if (e.item.itemName == "Edible Mushroom")
+                {
+                    hunger += 10;
+                    CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
+                }
             }
         }
 

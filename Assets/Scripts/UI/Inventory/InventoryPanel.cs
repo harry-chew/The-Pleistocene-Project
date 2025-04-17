@@ -18,7 +18,7 @@ namespace TPP.Scripts.UI
 
         public int selectedIndex = -1;
 
-        private List<InventorySlot> inventorySlots = new List<InventorySlot>();
+        public List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
         private void OnEnable()
         {
@@ -51,6 +51,26 @@ namespace TPP.Scripts.UI
                         return;
 
                     slot.UpdateQuantity(e.item.quantity);
+                }
+            }
+            else if (e.eventType == ItemEventType.Use)
+            {
+                if (inventorySlots == null || inventorySlots.Count == 0)
+                    return;
+
+                Item item = new Item(e.item);
+                if (HasInventoryItem(item))
+                {
+                    InventorySlot slot = GetInventorySlot(item);
+                    if (slot == null)
+                        return;
+
+                    slot.UpdateQuantity(-e.item.quantity);
+                    if (slot.item.quantity <= 0)
+                    {
+                        inventorySlots.Remove(slot);
+                        Destroy(slot.gameObject);
+                    }
                 }
             }
         }
