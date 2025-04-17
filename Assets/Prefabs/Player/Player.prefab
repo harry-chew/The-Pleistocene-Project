@@ -33,6 +33,37 @@ Transform:
   - {fileID: 5347971310219553523}
   m_Father: {fileID: 3019873949594002900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2134810030325972290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4928956113235121464}
+  m_Layer: 0
+  m_Name: Player Hands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4928956113235121464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134810030325972290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.379, z: 1.396}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1332769787412100188}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3026785911365057297
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +512,7 @@ Transform:
   m_Children:
   - {fileID: 6813902105977915543}
   - {fileID: 2283885054503710082}
+  - {fileID: 4928956113235121464}
   m_Father: {fileID: 6937069142197559765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4218973725473323066
@@ -680,6 +712,7 @@ GameObject:
   - component: {fileID: 7196346506264572479}
   - component: {fileID: 5769659896260052217}
   - component: {fileID: 9092993628670810415}
+  - component: {fileID: 6927051624663080485}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -937,6 +970,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRange: 2.65
   cam: {fileID: 4218973725473323066}
+--- !u!114 &6927051624663080485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755498398525236535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75eb982c89429da47bf821c34c9adea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handsPosition: {fileID: 4928956113235121464}
+  selectedItem: {fileID: 0}
 --- !u!1 &7759649064488086230
 GameObject:
   m_ObjectHideFlags: 0

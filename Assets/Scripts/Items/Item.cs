@@ -11,6 +11,7 @@ namespace TPP.Scripts.Items
         public int quantity;
         public AudioClip interactClip;
         public Sprite icon;
+        public GameObject itemPrefab;
 
         public Item(ItemSO itemSO)
         {
@@ -19,6 +20,7 @@ namespace TPP.Scripts.Items
             quantity = itemSO.quantity;
             interactClip = itemSO.interactClip;
             icon = itemSO.icon;
+            itemPrefab = itemSO.itemPrefab;
         }
     }
 }

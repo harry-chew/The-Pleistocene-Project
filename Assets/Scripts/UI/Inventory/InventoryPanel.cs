@@ -16,6 +16,8 @@ namespace TPP.Scripts.UI
         [Range(1, 8)]
         public int maxSlots;
 
+        public int selectedIndex = -1;
+
         private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
         private void OnEnable()
@@ -121,14 +123,54 @@ namespace TPP.Scripts.UI
             }
         }
 
+        private bool IsSelected(int index)
+        {
+            if (inventorySlots == null || inventorySlots.Count == 0)
+            {
+                return false;
+            }
+
+            if (inventorySlots[index] != null)
+            {
+                return inventorySlots[index].selected;
+            }
+
+            return false;
+        }
+
         private void SelectSlot(int index)
         {
             if (inventorySlots == null || inventorySlots.Count == 0)
                 return;
 
+            if (index >= inventorySlots.Count)
+                return;
+
+            if (IsSelected(index))
+            {
+                DeselectSlot(index);
+                return;
+            }
+
             for (int i = 0; i < inventorySlots.Count; i++)
             {
-                inventorySlots[i].SelectSlot(index == i);
+                if (index == i)
+                {
+                    inventorySlots[i].SelectSlot(true);
+                    CoreEvents.FirePlayerSelectedItemEvent(inventorySlots[i].item);
+                }
+            }
+        }
+
+        private void DeselectSlot(int index)
+        {
+            if (inventorySlots == null || inventorySlots.Count == 0)
+                return;
+
+            if (inventorySlots[index] != null)
+            {
+                inventorySlots[index].SelectSlot(false);
+                CoreEvents.FirePlayerSelectedItemEvent(null);
             }
         }
     }

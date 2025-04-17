@@ -9,6 +9,7 @@ namespace TPP.Scripts.Events
         public static Action<IInteractable> SelectInteractableEvent;
 
         public static EventHandler<ItemEventArgs> ItemEvent;
+        public static Action<Item> SelectedItemEvent; 
         public static EventHandler<WorldEventArgs> WorldEvent;
         public static EventHandler<PlayerEventArgs> PlayerEvent;
         public static Action<int> DrinkWaterEvent;
@@ -22,6 +23,11 @@ namespace TPP.Scripts.Events
         {
             ItemEventArgs args = new ItemEventArgs(ItemEventType.Collect, item);
             ItemEvent?.Invoke(null, args);
+        }
+
+        public static void FirePlayerSelectedItemEvent(Item item)
+        {
+            SelectedItemEvent?.Invoke(item);
         }
 
         public static void FireWorldTickEvent()

@@ -1,5 +1,6 @@
 using DG.Tweening;
 using TMPro;
+using TPP.Scripts.Events;
 using TPP.Scripts.Items;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace TPP.Scripts.UI
         public Image border;
         public Image icon;
         public TextMeshProUGUI itemCount;
+        public bool selected;
 
         [Space(10)]
         [Header("Border")]
@@ -36,6 +38,7 @@ namespace TPP.Scripts.UI
         public void SelectSlot(bool selected)
         {
             border.color = selected ? selectedColor : borderColor;
+            this.selected = selected;
         }
 
         public void UpdateQuantity(int quantity)
