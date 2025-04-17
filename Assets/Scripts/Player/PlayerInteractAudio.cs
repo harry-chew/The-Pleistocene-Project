@@ -1,4 +1,3 @@
-using System;
 using TPP.Scripts.Events;
 using UnityEngine;
 
@@ -6,11 +5,17 @@ namespace TPP.Scripts.Player
 {
     public class PlayerInteractAudio : MonoBehaviour
     {
+        [Header("Interact Audio Source")]
         public AudioSource interactAudioSource;
-        // Start is called before the first frame update
-        void Start()
+
+        private void OnEnable()
         {
             CoreEvents.ItemEvent += OnItemEvent;
+        }
+
+        private void OnDisable()
+        {
+            CoreEvents.ItemEvent -= OnItemEvent;
         }
 
         private void OnItemEvent(object sender, ItemEventArgs e)
@@ -27,8 +32,8 @@ namespace TPP.Scripts.Player
         private void PlayInteractAudio(AudioClip clip)
         {
             interactAudioSource.clip = clip;
-            interactAudioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
-            interactAudioSource.volume = UnityEngine.Random.Range(0.9f, 1.1f);
+            interactAudioSource.pitch = Random.Range(0.8f, 1.2f);
+            interactAudioSource.volume = Random.Range(0.9f, 1.1f);
             interactAudioSource.Play();
         }
     }

@@ -16,9 +16,8 @@ namespace TPP.Scripts.UI
         [Range(1, 8)]
         public int maxSlots;
 
-        public int selectedIndex = -1;
-
-        public List<InventorySlot> inventorySlots = new List<InventorySlot>();
+        private int selectedIndex = -1;
+        private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
         private void OnEnable()
         {
@@ -34,44 +33,54 @@ namespace TPP.Scripts.UI
         {
             if (e.eventType == ItemEventType.Collect)
             {
-                if (inventorySlots == null)
-                    inventorySlots = new List<InventorySlot>();
-
-                Item item = new Item(e.item);
-                if (!HasInventoryItem(item) && inventorySlots.Count < maxSlots)
-                {
-                    InventorySlot slot = Instantiate(inventorySlotPrefab, transform);
-                    slot.Init(item);
-                    inventorySlots.Add(slot);
-                }
-                else
-                {
-                    InventorySlot slot = GetInventorySlot(item);
-                    if (slot == null)
-                        return;
-
-                    slot.UpdateQuantity(e.item.quantity);
-                }
+                HandleCollectItem(e);
             }
             else if (e.eventType == ItemEventType.Use)
             {
-                if (inventorySlots == null || inventorySlots.Count == 0)
+                HandleUseItem(e);
+            }
+        }
+
+        private void HandleUseItem(ItemEventArgs e)
+        {
+            if (inventorySlots == null || inventorySlots.Count == 0)
+                return;
+
+            Item item = new Item(e.item);
+            if (HasInventoryItem(item))
+            {
+                InventorySlot slot = GetInventorySlot(item);
+                if (slot == null)
                     return;
 
-                Item item = new Item(e.item);
-                if (HasInventoryItem(item))
+                slot.UpdateQuantity(-e.item.quantity);
+                if (slot.item.quantity <= 0)
                 {
-                    InventorySlot slot = GetInventorySlot(item);
-                    if (slot == null)
-                        return;
-
-                    slot.UpdateQuantity(-e.item.quantity);
-                    if (slot.item.quantity <= 0)
-                    {
-                        inventorySlots.Remove(slot);
-                        Destroy(slot.gameObject);
-                    }
+                    inventorySlots.Remove(slot);
+                    Destroy(slot.gameObject);
                 }
+            }
+        }
+
+        private void HandleCollectItem(ItemEventArgs e)
+        {
+            if (inventorySlots == null)
+                inventorySlots = new List<InventorySlot>();
+
+            Item item = new Item(e.item);
+            if (!HasInventoryItem(item) && inventorySlots.Count < maxSlots)
+            {
+                InventorySlot slot = Instantiate(inventorySlotPrefab, transform);
+                slot.Init(item);
+                inventorySlots.Add(slot);
+            }
+            else
+            {
+                InventorySlot slot = GetInventorySlot(item);
+                if (slot == null)
+                    return;
+
+                slot.UpdateQuantity(e.item.quantity);
             }
         }
 

@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System;
 using TPP.Scripts.Events;
 using TPP.Scripts.Items;
 using UnityEngine;
@@ -8,10 +7,11 @@ namespace TPP.Scripts.Player
 {
     public class PlayerSelectedItem : MonoBehaviour
     {
+        [Header("Player Hands")]
         public Transform handsPosition;
-        public GameObject selectedItem;
 
-        public Item item;
+        private GameObject selectedItem;
+        private Item item;
 
         public void OnEnable()
         {
@@ -22,6 +22,7 @@ namespace TPP.Scripts.Player
         public void OnDisable()
         {
             CoreEvents.SelectedItemEvent += OnSelectedItemEvent;
+            CoreEvents.ItemEvent -= OnItemEvent;
         }
 
         private void OnItemEvent(object sender, ItemEventArgs e)

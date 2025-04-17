@@ -1,4 +1,3 @@
-using System;
 using TPP.Scripts.Environment;
 using TPP.Scripts.Events;
 using TPP.Scripts.Systems;
@@ -38,21 +37,20 @@ namespace TPP.Scripts
         {
             CoreEvents.WorldEvent -= OnWorldEvent;
             CoreEvents.DrinkWaterEvent -= OnDrinkWaterEvent;
+            CoreEvents.ItemEvent -= OnItemEvent;
         }
 
         private void OnWorldEvent(object sender, WorldEventArgs e)
         {
             if (e.eventType == WorldEventType.Tick)
             {
-                hunger--;
-                thirst--;
-
+                HandleHunger();
+                HandleThirst();
                 HandleTemperature();
 
                 CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
             }
         }
-
 
         private void OnItemEvent(object sender, ItemEventArgs e)
         {
@@ -81,6 +79,16 @@ namespace TPP.Scripts
                 temperature -= 0.75f;
             else
                 temperature += 0.25f;
+        }
+
+        private void HandleHunger()
+        {
+            hunger--;
+        }
+
+        private void HandleThirst()
+        {
+            thirst--;
         }
 
         public void Heat(int heatStrength)
