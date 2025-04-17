@@ -28,6 +28,9 @@ namespace TPP.Scripts.UI
 
         public void Init(Item item)
         {
+            if (item == null)
+                return;
+
             this.item = item;
             itemCount.text = item.quantity.ToString();
             border.color = borderColor;
@@ -37,12 +40,18 @@ namespace TPP.Scripts.UI
 
         public void SelectSlot(bool selected)
         {
+            if (this.selected == selected)
+                return;
+
             border.color = selected ? selectedColor : borderColor;
             this.selected = selected;
         }
 
         public void UpdateQuantity(int quantity)
         {
+            if (quantity == 0)
+                return;
+
             item.quantity += quantity;
             itemCount.text = item.quantity.ToString();
 

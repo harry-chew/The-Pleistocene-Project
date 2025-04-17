@@ -33,13 +33,10 @@ namespace TPP.Scripts.Player
                 footsteps = null;
                 isMoving = false;
             }
-            else
+            else if (footsteps == null)
             {
-                if (footsteps == null)
-                {
-                    footsteps = StartCoroutine(Footstep());
-                    isMoving = true;
-                }
+                footsteps = StartCoroutine(Footstep());
+                isMoving = true;
             }
 
             Vector3 norm = rb.velocity.normalized;

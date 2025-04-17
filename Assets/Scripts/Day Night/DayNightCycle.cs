@@ -27,6 +27,9 @@ namespace TPP.Scripts.Systems
 
         private void UpdateLighting(float timePercent)
         {
+            if (timePercent < 0f)
+                return;
+
             RenderSettings.ambientLight = preset.ambientColor.Evaluate(timePercent);
             RenderSettings.fogColor = preset.fogColor.Evaluate(timePercent);
             RenderSettings.fogDensity = preset.fogIntensity.Evaluate(timePercent).a;

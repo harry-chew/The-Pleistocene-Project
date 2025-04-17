@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TPP.Scripts.Events;
 using UnityEngine;
@@ -54,10 +53,11 @@ namespace TPP.Scripts.Flora
         {
             if (e.eventType == WorldEventType.Tick)
             {
-                if (floras == null || floras.Count == 0)
+                if (floras == null)
                     return;
 
-                GrowFlora();
+                if (floras.Count > 0)
+                    GrowFlora();
 
                 if (floras.Count < maxFlora)
                 {
@@ -78,17 +78,17 @@ namespace TPP.Scripts.Flora
 
         private GameObject GetRandomFlora()
         {
-            if (floraPrefabs.Length == 0)
+            if (floraPrefabs == null || floraPrefabs.Length == 0)
                 return floraPrefab;
 
-            int random = UnityEngine.Random.Range(0, floraPrefabs.Length);
+            int random = Random.Range(0, floraPrefabs.Length);
             return floraPrefabs[random];
         }
 
         private Vector3 GetRandomSpawnPosition()
         {
-            float randomX = UnityEngine.Random.Range(-sphereCollider.radius, sphereCollider.radius);
-            float randomZ = UnityEngine.Random.Range(-sphereCollider.radius, sphereCollider.radius);
+            float randomX = Random.Range(-sphereCollider.radius, sphereCollider.radius);
+            float randomZ = Random.Range(-sphereCollider.radius, sphereCollider.radius);
 
             Vector3 spawnPosition = new Vector3(transform.position.x + randomX, 0, transform.position.z + randomZ);
 
@@ -97,7 +97,7 @@ namespace TPP.Scripts.Flora
 
         private Quaternion GetRandomSpawnRotation()
         {
-            Quaternion quaternion = Quaternion.Euler(0, UnityEngine.Random.Range(0f, 360f), 0);
+            Quaternion quaternion = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
 
             return quaternion;
         }
@@ -109,14 +109,17 @@ namespace TPP.Scripts.Flora
 
             GameObject randomFlora = GetRandomFlora();
             GameObject spawnedFlora = Instantiate(randomFlora, GetRandomSpawnPosition(), GetRandomSpawnRotation(), transform);
-            float randomSize = UnityEngine.Random.Range(minStartSize, maxStartSize);
+            float randomSize = Random.Range(minStartSize, maxStartSize);
             spawnedFlora.transform.localScale = new Vector3(randomSize, randomSize, randomSize);
             floras.Add(spawnedFlora);
         }
 
         private void GrowFlora()
         {
-            int randIndex = UnityEngine.Random.Range(0, floras.Count);
+            if (floras == null)
+                return;
+
+            int randIndex = Random.Range(0, floras.Count);
 
             GameObject floraToGrow = floras[randIndex];
             if (floraToGrow == null)

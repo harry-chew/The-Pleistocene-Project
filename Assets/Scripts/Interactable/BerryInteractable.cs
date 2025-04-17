@@ -5,8 +5,10 @@ namespace TPP.Scripts.Interactable
 {
     public class BerryInteractable : CollectItemInteractable
     {
+        [Header("Berries Graphics")]
         public GameObject berries;
-        public bool canInteract;
+
+        private bool canInteract;
 
         private void Start()
         {
@@ -37,12 +39,12 @@ namespace TPP.Scripts.Interactable
 
         public override void Interact()
         {
-            if (canInteract)
-            {
-                base.Interact();
-                canInteract = false;
-                berries.SetActive(false);
-            }
+            if (!canInteract)
+                return;
+
+            base.Interact();
+            canInteract = false;
+            berries.SetActive(false);
         }
     }
 }

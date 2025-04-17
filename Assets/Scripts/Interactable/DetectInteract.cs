@@ -10,7 +10,9 @@ namespace TPP.Scripts.Player
         [Range(0.5f, 15f)]
         public float interactRange;
 
+        [Header("Camera for ray")]
         public Camera cam;
+
         private IInteractable selectedInteractable;
         private Vector3 rayPoint;
 

@@ -7,13 +7,19 @@ namespace TPP.Scripts.Environment
 {
     public class HeatSource : MonoBehaviour
     {
+        [Header("Heat Emitted")]
         public int heatStrength;
 
         private List<IHeatable> heatables = new List<IHeatable>();
 
-        public void Start()
+        private void OnEnable()
         {
             CoreEvents.WorldEvent += OnWorldEvent;
+        }
+
+        private void OnDisable()
+        {
+            CoreEvents.WorldEvent -= OnWorldEvent;
         }
 
         private void OnWorldEvent(object sender, WorldEventArgs e)
