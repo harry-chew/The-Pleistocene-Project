@@ -152,14 +152,19 @@ namespace TPP.Scripts.UI
                 return;
             }
 
+            if (selectedIndex != index && selectedIndex != -1)
+                DeselectSlot(selectedIndex);
+
             for (int i = 0; i < inventorySlots.Count; i++)
             {
                 if (index == i)
                 {
-                    inventorySlots[i].SelectSlot(true);
+                    inventorySlots[i].SelectSlot(index == i);
                     CoreEvents.FirePlayerSelectedItemEvent(inventorySlots[i].item);
                 }
             }
+
+            selectedIndex = index;
         }
 
         private void DeselectSlot(int index)
@@ -170,6 +175,7 @@ namespace TPP.Scripts.UI
             if (inventorySlots[index] != null)
             {
                 inventorySlots[index].SelectSlot(false);
+                selectedIndex = -1;
                 CoreEvents.FirePlayerSelectedItemEvent(null);
             }
         }
