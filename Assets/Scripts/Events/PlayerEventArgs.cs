@@ -4,11 +4,11 @@ namespace TPP.Scripts.Events
 {
     public class PlayerEventArgs : EventArgs
     {
-        public int hunger;
-        public int thirst;
+        public float hunger;
+        public float thirst;
         public float temperature;
 
-        public PlayerEventArgs(int hunger, int thirst, float temperature)
+        public PlayerEventArgs(float hunger, float thirst, float temperature)
         {
             this.hunger = hunger;
             this.thirst = thirst;

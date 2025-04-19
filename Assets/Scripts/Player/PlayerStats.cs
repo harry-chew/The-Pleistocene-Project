@@ -1,30 +1,20 @@
 using TPP.Scripts.Defines;
-using TPP.Scripts.Environment;
 using TPP.Scripts.Events;
-using TPP.Scripts.Systems;
 using UnityEngine;
 
 namespace TPP.Scripts
 {
-    public class PlayerStats : MonoBehaviour, IHeatable
+    public class PlayerStats : MonoBehaviour
     {
-        [Header("Hunger")]
-        public int hunger;
-        public int startingHunger;
-
-        [Header("Thirst")]
-        public int thirst;
-        public int startingThirst;
-
-        [Header("Temperature")]
-        public float temperature;
-        public float startingTemperature;
+        public Metabolism metabolism;
+        public Hydration hydration;
+        public Thermostat thermostat;
 
         private void Awake()
         {
-            hunger = startingHunger;
-            thirst = startingThirst;
-            temperature = startingTemperature;
+            metabolism.Init(100f);
+            hydration.Init(100f);
+            thermostat.Init(37f);
         }
 
         private void OnEnable()
@@ -45,11 +35,11 @@ namespace TPP.Scripts
         {
             if (e.eventType == WorldEventType.Tick)
             {
-                HandleHunger();
-                HandleThirst();
-                HandleTemperature();
+                metabolism.Tick();
+                hydration.Tick();
+                thermostat.Tick();
 
-                CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
+                CoreEvents.FirePlayerStatsEvent(metabolism.GetSated(), hydration.GetHydrationLevel(), thermostat.GetCurrentTemperature());
             }
         }
 
@@ -59,43 +49,17 @@ namespace TPP.Scripts
             {
                 if (e.item.itemName == ItemDefines.EdibleMushroomItemName)
                 {
-                    hunger += 10;
-                    CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
+                    metabolism.Eat(10);
+                    CoreEvents.FirePlayerStatsEvent(metabolism.GetSated(), hydration.GetHydrationLevel(), thermostat.GetCurrentTemperature());
                 }
             }
         }
 
         private void OnDrinkWaterEvent(int waterAmount)
         {
-            thirst += waterAmount;
-            if (thirst >= startingThirst)
-                thirst = startingThirst;
+            hydration.Hydrate(waterAmount);
 
-            CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
-        }
-
-        private void HandleTemperature()
-        {
-            if (!DayNightCycle.IsDayTime())
-                temperature -= 0.75f;
-            else
-                temperature += 0.25f;
-        }
-
-        private void HandleHunger()
-        {
-            hunger--;
-        }
-
-        private void HandleThirst()
-        {
-            thirst--;
-        }
-
-        public void Heat(int heatStrength)
-        {
-            temperature += heatStrength;
-            Debug.Log(temperature);
+            CoreEvents.FirePlayerStatsEvent(metabolism.GetSated(), hydration.GetHydrationLevel(), thermostat.GetCurrentTemperature());
         }
     }
 }

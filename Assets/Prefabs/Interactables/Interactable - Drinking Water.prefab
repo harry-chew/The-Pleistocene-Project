@@ -71,7 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9faf6fbe984fc4b8cc8fdee67ff62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterPerDrink: 9
+  waterPerDrink: 10
+  interactCooldown: 0.5
 --- !u!1 &8901663912346748766
 GameObject:
   m_ObjectHideFlags: 0

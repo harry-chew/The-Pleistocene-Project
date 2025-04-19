@@ -2,6 +2,6 @@
 {
     public interface IHeatable
     {
-        public void Heat(int heatStrength);
+        public void Heat(float heatStrength);
     }
 }

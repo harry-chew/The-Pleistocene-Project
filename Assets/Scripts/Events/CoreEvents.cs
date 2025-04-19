@@ -54,7 +54,7 @@ namespace TPP.Scripts.Events
             WorldEvent?.Invoke(null, args);
         }
 
-        public static void FirePlayerStatsEvent(int hunger, int thirst, float temperature)
+        public static void FirePlayerStatsEvent(float hunger, float thirst, float temperature)
         {
             PlayerEventArgs args = new PlayerEventArgs(hunger, thirst, temperature);
             PlayerEvent?.Invoke(null, args);

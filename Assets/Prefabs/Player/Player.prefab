@@ -709,6 +709,9 @@ GameObject:
   - component: {fileID: 2069761860659651118}
   - component: {fileID: 8881591943505602101}
   - component: {fileID: 5499604020868741377}
+  - component: {fileID: 4101950540335929600}
+  - component: {fileID: 8486888100257162236}
+  - component: {fileID: 3574919871515873220}
   - component: {fileID: 7196346506264572479}
   - component: {fileID: 5769659896260052217}
   - component: {fileID: 9092993628670810415}
@@ -918,12 +921,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30072bbc1389f4c8d64a559a8ab6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hunger: 0
-  startingHunger: 100
-  thirst: 0
-  startingThirst: 100
+  metabolism: {fileID: 4101950540335929600}
+  hydration: {fileID: 8486888100257162236}
+  thermostat: {fileID: 3574919871515873220}
+--- !u!114 &4101950540335929600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755498398525236535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfaaaf8284bb7a47bbe08303653cd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sated: 0
+--- !u!114 &8486888100257162236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755498398525236535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413608746717e994bb3728910c0b21f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hydration: 0
+--- !u!114 &3574919871515873220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755498398525236535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c2289006d67294790bb273ac5f90fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   temperature: 0
-  startingTemperature: 37
 --- !u!114 &7196346506264572479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,7 +1022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handsPosition: {fileID: 4928956113235121464}
-  selectedItem: {fileID: 0}
 --- !u!1 &7759649064488086230
 GameObject:
   m_ObjectHideFlags: 0
