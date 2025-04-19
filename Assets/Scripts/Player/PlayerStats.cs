@@ -1,3 +1,4 @@
+using TPP.Scripts.Defines;
 using TPP.Scripts.Environment;
 using TPP.Scripts.Events;
 using TPP.Scripts.Systems;
@@ -56,7 +57,7 @@ namespace TPP.Scripts
         {
             if (e.eventType == ItemEventType.Use)
             {
-                if (e.item.itemName == "Edible Mushroom")
+                if (e.item.itemName == ItemDefines.EdibleMushroomItemName)
                 {
                     hunger += 10;
                     CoreEvents.FirePlayerStatsEvent(hunger, thirst, temperature);
