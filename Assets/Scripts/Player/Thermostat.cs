@@ -1,11 +1,9 @@
-﻿using System;
-using TPP.Scripts.Environment;
+﻿using TPP.Scripts.Environment;
 using TPP.Scripts.Systems;
 using UnityEngine;
 
-namespace TPP.Scripts
+namespace TPP.Scripts.Player
 {
-    [Serializable]
     public class Thermostat : MonoBehaviour, IHeatable
     {
         [SerializeField] private float temperature;

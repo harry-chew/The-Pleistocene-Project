@@ -132,6 +132,8 @@ namespace TPP.Scripts.Flora
             if (tran == null)
                 return;
 
+            tran.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+
             if (tran.localScale.y > maxGrowSize)
             {
                 floras.Remove(floras[randIndex]);
@@ -139,8 +141,6 @@ namespace TPP.Scripts.Flora
 
                 SpawnFlora();
             }
-
-            floras[randIndex].transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
         }
     }
 }

@@ -2,7 +2,7 @@ using TPP.Scripts.Defines;
 using TPP.Scripts.Events;
 using UnityEngine;
 
-namespace TPP.Scripts
+namespace TPP.Scripts.Player
 {
     public class PlayerStats : MonoBehaviour
     {

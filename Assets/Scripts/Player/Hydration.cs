@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TPP.Scripts
+namespace TPP.Scripts.Player
 {
     public class Hydration : MonoBehaviour
     {
