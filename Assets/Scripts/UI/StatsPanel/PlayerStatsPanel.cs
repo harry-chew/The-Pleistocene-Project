@@ -13,9 +13,9 @@ namespace TPP.Scripts.UI
 
         public void Start()
         {
-            hungerComponent.Init("Hunger", 100);
-            thirstComponent.Init("Thirst", 100);
-            temperatureComponent.Init("Temperature", 37);
+            hungerComponent.Init();
+            thirstComponent.Init();
+            temperatureComponent.Init();
 
             CoreEvents.PlayerEvent += OnPlayerEvent;
         }

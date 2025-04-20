@@ -77,9 +77,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2fb19e7981a664c9086e901de0b619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statSO: {fileID: 0}
   statLabel: {fileID: 2190839465665737533}
   statIcon: {fileID: 7500249767281841363}
   statSlider: {fileID: 7102143637524978213}
+  fill: {fileID: 3337538717929843797}
+  maxValue: 0
+  sliderFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2177253562018539301
 GameObject:
   m_ObjectHideFlags: 0
