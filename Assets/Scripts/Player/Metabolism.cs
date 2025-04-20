@@ -7,15 +7,41 @@ namespace TPP.Scripts.Player
         [SerializeField] private float sated;
         private float maxSated;
 
+        public float metabolicRate;
+        private Rigidbody rb;
+
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+
         public void Init(float sated)
         {
             maxSated = sated;
             this.sated = sated;
+            metabolicRate = 0.1f;
+        }
+
+        private void HandleMetabolism()
+        {
+            float metabolicUse = rb.velocity.normalized.magnitude;
+            if (metabolicUse > 0.1f)
+                metabolicRate += 1f;
+            else
+                metabolicRate -= 1f;
+
+            if (metabolicRate > 5f)
+                metabolicRate = 5f;
+            else if (metabolicRate < 0f)
+                metabolicRate = 0.1f;
+
+                Debug.Log(metabolicRate);
         }
 
         public void Tick()
         {
-            sated -= 1f;
+            HandleMetabolism();
+            sated -= metabolicRate;
         }
 
         public float GetSated()
