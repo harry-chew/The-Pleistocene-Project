@@ -33,7 +33,7 @@ namespace TPP.Scripts.Player
 
         private void OnWorldEvent(object sender, WorldEventArgs e)
         {
-            if (e.eventType == WorldEventType.Tick)
+            if (e.eventType == WorldEventType.HourTick)
             {
                 metabolism.Tick();
                 hydration.Tick();

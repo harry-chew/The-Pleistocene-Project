@@ -24,7 +24,7 @@ namespace TPP.Scripts.Environment
 
         private void OnWorldEvent(object sender, WorldEventArgs e)
         {
-            if (e.eventType == WorldEventType.Tick)
+            if (e.eventType == WorldEventType.HourTick)
             {
                 if (heatables == null || heatables.Count == 0)
                     return;
