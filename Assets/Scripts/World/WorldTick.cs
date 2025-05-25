@@ -27,9 +27,20 @@ namespace TPP.Scripts.World
                 ticks++;
                 currentTick = 0f;
 
+                // 24 ticks per day, 168 ticks per week, 672 ticks per month
                 if (ticks % 24 == 0)
                 {
                     CoreEvents.FireWorldTickDayEvent();
+                }
+
+                if (ticks % 168 == 0)
+                {
+                    CoreEvents.FireWorldTickWeekEvent();
+                }
+
+                if (ticks % 672 == 0)
+                {
+                    CoreEvents.FireWorldTickMonthEvent();
                     ticks = 0;
                 }
             }

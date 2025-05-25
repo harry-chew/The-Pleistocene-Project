@@ -54,6 +54,18 @@ namespace TPP.Scripts.Events
             WorldEvent?.Invoke(null, args);
         }
 
+        public static void FireWorldTickWeekEvent()
+        {
+            WorldEventArgs args = new WorldEventArgs(WorldEventType.WeekTick);
+            WorldEvent?.Invoke(null, args);
+        }
+
+        public static void FireWorldTickMonthEvent()
+        {
+            WorldEventArgs args = new WorldEventArgs(WorldEventType.MonthTick);
+            WorldEvent?.Invoke(null, args);
+        }
+
         public static void FirePlayerStatsEvent(float hunger, float thirst, float temperature)
         {
             PlayerEventArgs args = new PlayerEventArgs(hunger, thirst, temperature);

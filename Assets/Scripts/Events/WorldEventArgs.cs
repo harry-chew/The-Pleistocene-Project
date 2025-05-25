@@ -6,7 +6,9 @@ namespace TPP.Scripts.Events
     {
         Tick,
         HourTick,
-        DayTick
+        DayTick,
+        WeekTick,
+        MonthTick
     }
 
     public class WorldEventArgs : EventArgs
