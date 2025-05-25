@@ -23,15 +23,11 @@ namespace TPP.Scripts.World
             currentTick += Time.deltaTime;
             if (currentTick >= tickTimer)
             {
-                CoreEvents.FireWorldTickEvent();
+                CoreEvents.FireWorldTickHourEvent();
                 ticks++;
                 currentTick = 0f;
 
-                if (ticks % 60 == 0)
-                {
-                    CoreEvents.FireWorldTickHourEvent();
-                }
-                if (ticks % 60 * 24 == 0)
+                if (ticks % 24 == 0)
                 {
                     CoreEvents.FireWorldTickDayEvent();
                     ticks = 0;

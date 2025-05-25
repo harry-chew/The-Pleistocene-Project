@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 namespace TPP.Scripts.Systems
@@ -58,10 +59,44 @@ namespace TPP.Scripts.Systems
 
         public static bool IsDayTime()
         {
-            if (TimeOfDay >= 5f && TimeOfDay <= 20f)
+            if (TimeOfDay >= 6f && TimeOfDay <= 20f)
                 return true;
 
             return false;
+        }
+
+        public static bool IsMorning()
+        {
+            if (TimeOfDay >= 6f && TimeOfDay < 12f)
+                return true;
+
+            return false;
+        }
+
+        public static bool IsAfternoon()
+        {
+            if (TimeOfDay >= 12f && TimeOfDay < 18f)
+                return true;
+            return false;
+        }
+
+        public static bool IsEvening()
+        {
+            if (TimeOfDay >= 18f && TimeOfDay < 20f)
+                return true;
+            return false;
+        }
+
+        public static bool IsNightTime()
+        {
+            if (TimeOfDay < 6f || TimeOfDay >= 20f)
+                return true;
+            return false;
+        }
+
+        public static float GetTimeOfDay()
+        {
+            return TimeOfDay;
         }
     }
 }
