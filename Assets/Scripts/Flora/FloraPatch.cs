@@ -51,23 +51,13 @@ namespace TPP.Scripts.Flora
 
         private void OnWorldEvent(object sender, WorldEventArgs e)
         {
-            if (e.eventType == WorldEventType.Tick)
+            if (e.eventType == WorldEventType.HourTick)
             {
                 if (floras == null)
                     return;
 
                 if (floras.Count > 0)
                     GrowFlora();
-
-                if (floras.Count < maxFlora)
-                {
-                    SpawnFlora();
-                }
-            }
-            if (e.eventType == WorldEventType.HourTick)
-            {
-                if (floras == null)
-                    return;
 
                 if (floras.Count < maxFlora)
                 {

@@ -27,7 +27,7 @@ namespace TPP.Scripts.Interactable
 
         private void OnWorldEvent(object sender, WorldEventArgs e)
         {
-            if (e.eventType == WorldEventType.HourTick)
+            if (e.eventType == WorldEventType.DayTick)
             {
                 if (canInteract)
                     return;
