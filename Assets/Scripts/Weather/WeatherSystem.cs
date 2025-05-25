@@ -46,6 +46,8 @@ namespace TPP.Scripts.Systems.Weather
             {
                 UpdateTemperature();
                 UpdateWind();
+
+                CoreEvents.FireWeatherChangedEvent(ambientTemperature, windSpeed, windDirection);
             }
         }
 
