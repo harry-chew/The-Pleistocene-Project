@@ -28,6 +28,9 @@ namespace TPP.Scripts.Systems.Weather
         private void Start()
         {
             Debug.Log("Weather System Initialized with Ambient Temperature: " + ambientTemperature + "°C");
+            Debug.Log("Initial Wind Speed: " + windSpeed + " m/s, Direction: " + windDirection + "°");
+
+            CoreEvents.FireWeatherChangedEvent(ambientTemperature, windSpeed, windDirection);
         }
 
         private void OnEnable()
