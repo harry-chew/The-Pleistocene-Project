@@ -70,7 +70,7 @@ namespace TPP.Scripts.Player
             selectedInteractable = interactable;
             CoreEvents.FireSelectInteractableEvent(selectedInteractable);
 
-            string message = interactable == null ? "deselected" : $"{selectedInteractable.GetGameObject().name}";
+            string message = interactable == null ? "[Interact]: item deselected" : $"[Interact] item selected: {selectedInteractable.GetGameObject().name}";
             Debug.Log(message);
         }
     }

@@ -40,7 +40,7 @@ namespace TPP.Scripts.Environment
         {
             if (other.TryGetComponent<IHeatable>(out IHeatable heatable))
             {
-                Debug.Log($"added {other.transform.name}");
+                Debug.Log($"[HeatSource] {gameObject.name}: added {other.transform.name}");
                 heatables.Add(heatable);
             }
         }
@@ -51,7 +51,7 @@ namespace TPP.Scripts.Environment
             {
                 if (heatables.Contains(heatable))
                 {
-                    Debug.Log($"removed {other.transform.name}");
+                    Debug.Log($"[HeatSource] {gameObject.name}: removed {other.transform.name}");
                     heatables.Remove(heatable);
                 }
             }
