@@ -35,7 +35,7 @@ namespace TPP.Scripts.Player
             else if (metabolicRate < 0f)
                 metabolicRate = 0.1f;
 
-                Debug.Log(metabolicRate);
+                //Debug.Log(metabolicRate);
         }
 
         public void Tick()
