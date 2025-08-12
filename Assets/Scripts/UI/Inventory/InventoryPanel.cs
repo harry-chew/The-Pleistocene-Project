@@ -56,6 +56,7 @@ namespace TPP.Scripts.UI
                 slot.UpdateQuantity(-e.item.quantity);
                 if (slot.item.quantity <= 0)
                 {
+                    DeselectSlot(slot);
                     inventorySlots.Remove(slot);
                     Destroy(slot.gameObject);
                 }
@@ -206,6 +207,20 @@ namespace TPP.Scripts.UI
                 inventorySlots[index].SelectSlot(false);
                 selectedIndex = -1;
                 CoreEvents.FirePlayerSelectedItemEvent(null);
+            }
+        }
+
+        private void DeselectSlot(InventorySlot slot)
+        {
+            if (inventorySlots == null || inventorySlots.Count == 0)
+                return;
+
+            for (int i = 0; i < inventorySlots.Count; i++)
+            {
+                if (inventorySlots[i] == slot)
+                {
+                    DeselectSlot(i);
+                }
             }
         }
     }
